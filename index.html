@@ -99,7 +99,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="前置依赖下载"><a href="#前置依赖下载" class="headerlink" title="前置依赖下载"></a>前置依赖下载</h2><p>1）机器本地安装Git,使用阿里云镜像下载最快；安装过程中一路默认安装即可，不要手欠点击安装其他插件。这里安装Git的是为了后面可以把本地修改的内容，通过git同步到github pages。</p>
+        <h2 id="1-前置依赖下载"><a href="#1-前置依赖下载" class="headerlink" title="1.前置依赖下载"></a>1.前置依赖下载</h2><p>1）机器本地安装Git,使用阿里云镜像下载最快；安装过程中一路默认安装即可，不要手欠点击安装其他插件。这里安装Git的是为了后面可以把本地修改的内容，通过git同步到github pages。</p>
 <p><a target="_blank" rel="noopener" href="https://cdn.npmmirror.com/binaries/git-for-windows/v2.40.1.windows.1/Git-2.40.1-64-bit.exe">阿里云镜像git下载链接</a></p>
 <p>2）机器本地安装Nodejs，也是一路默认安装即可，安装完成后重启机器。<strong>这里安装过程会比较慢，并且命令行也没有什么提示，所以要耐心等待一段时间</strong>。安装Nodejs是因为后面使用的<strong>静态博客生成框架——Hexo</strong>要依赖于Nodejs运行。</p>
 <p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn">Nodejs下载链接</a></p>
@@ -108,7 +108,7 @@
 npm -v
 node -v
 </code></pre>
-<h2 id="配置Git和Github账号之间的连接"><a href="#配置Git和Github账号之间的连接" class="headerlink" title="配置Git和Github账号之间的连接"></a>配置Git和Github账号之间的连接</h2><p>1） 使用邮箱注册github账号；<br>2） 本地机器，右键“Git Bash here”<br>3） 输入如下代码：  </p>
+<h2 id="2-配置Git和Github账号之间的连接"><a href="#2-配置Git和Github账号之间的连接" class="headerlink" title="2.配置Git和Github账号之间的连接"></a>2.配置Git和Github账号之间的连接</h2><p>1） 使用邮箱注册github账号；<br>2） 本地机器，右键“Git Bash here”<br>3） 输入如下代码：  </p>
 <pre><code>git config --global user.name &quot;Github账号名&quot;
 git config --global user.mail &quot;Github注册邮箱&quot;
 </code></pre>
@@ -124,8 +124,8 @@ git config --global user.mail &quot;Github注册邮箱&quot;
 
 #结果显示，Hi,xxx，you are success....
 </code></pre>
-<h1 id="配置Github-Pages仓库"><a href="#配置Github-Pages仓库" class="headerlink" title="配置Github Pages仓库"></a>配置Github Pages仓库</h1><p>1） 根据Github Pages指导，创建属于自己账号的github.io页面</p>
-<h1 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h1><p>1）新建文件夹，该文件夹就是后续Hexo博客资源的存储地；  </p>
+<h2 id="3-配置Github-Pages仓库"><a href="#3-配置Github-Pages仓库" class="headerlink" title="3. 配置Github Pages仓库"></a>3. 配置Github Pages仓库</h2><p>1） 根据Github Pages指导，创建属于自己账号的github.io页面</p>
+<h2 id="4-本地安装Hexo"><a href="#4-本地安装Hexo" class="headerlink" title="4. 本地安装Hexo"></a>4. 本地安装Hexo</h2><p>1）新建文件夹，该文件夹就是后续Hexo博客资源的存储地；  </p>
 <p>2）进入该文件夹，右键 -&gt; Git Bash Here；  </p>
 <p>3）使用npm安装hexo命令行，输入下列代码：</p>
 <pre><code>npm install -g hexo-cli
@@ -141,17 +141,32 @@ git config --global user.mail &quot;Github注册邮箱&quot;
 <pre><code>hexo g； # 生成页面
 hexo s； # 本地预览
 </code></pre>
-<p>7） 本地预览出现hexo比克默认页面，说明搭建成功。</p>
-<h1 id="本地配置Hexo并预览"><a href="#本地配置Hexo并预览" class="headerlink" title="本地配置Hexo并预览"></a>本地配置Hexo并预览</h1><h1 id="编写博客，并部署发布到Github-Pages"><a href="#编写博客，并部署发布到Github-Pages" class="headerlink" title="编写博客，并部署发布到Github Pages"></a>编写博客，并部署发布到Github Pages</h1><p>hexo 民工三连</p>
-<pre><code>hexo clean
-hexo g
-hexo d
+<p>7） 本地预览出现hexo默认博客页面，说明搭建成功。</p>
+<h2 id="5-部署本地Hexo和Github-Pages的同步"><a href="#5-部署本地Hexo和Github-Pages的同步" class="headerlink" title="5. 部署本地Hexo和Github Pages的同步"></a>5. 部署本地Hexo和Github Pages的同步</h2><p>这一步的目的是：本地Hexo生成的博客，能够同步到你的Github Pages上，这样就能够通过互联网访问了。  </p>
+<p>安装Hexo-deployer-git</p>
+<pre><code>npm install hexo-deployer-git --save
 </code></pre>
-<h1 id="待补充内容-Hexo的主题更换、Markdown的编辑、注意点"><a href="#待补充内容-Hexo的主题更换、Markdown的编辑、注意点" class="headerlink" title="待补充内容-Hexo的主题更换、Markdown的编辑、注意点"></a>待补充内容-Hexo的主题更换、Markdown的编辑、注意点</h1>
+<p>修改Hexo文件夹中的配置文件_config.yml,定位到末尾的Deployment 部分，修改成如下：  </p>
+<pre><code>deploy:
+    type: git
+    repository: git@github.com:用户名/用户名.github.io.git
+    branch: main
+</code></pre>
+<p>完成后，git命令shell中，输入下列命令，即部署完成：</p>
+<pre><code>hexo d
+</code></pre>
+<h2 id="6-编写博客，并部署发布到Github-Pages"><a href="#6-编写博客，并部署发布到Github-Pages" class="headerlink" title="6. 编写博客，并部署发布到Github Pages"></a>6. 编写博客，并部署发布到Github Pages</h2><p>在hexo文件夹中，找到source文件夹–&gt;_post文件夹；<br>新建后缀名为.md的markdown文件，开始编写自己的博客吧。<br>每次在本地更新完博客时，都可以通过git命令行执以下命令，完成博客更新：</p>
+<p>hexo 民工三连</p>
+<pre><code>hexo clean  //清空hexo
+hexo g  //生成页面
+hexo d  //提交页面  
+</code></pre>
+<h2 id="7-参考连接"><a href="#7-参考连接" class="headerlink" title="7. 参考连接"></a>7. 参考连接</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464?utm_id=0">知乎-小白搭建博客</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/14/Nexo%E7%BB%93%E5%90%88Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" data-id="clhnir5d20001vkvjgilwe6e8" data-title="Nexo结合Github搭建个人博客记录" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2023/05/14/Nexo%E7%BB%93%E5%90%88Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AE%B0%E5%BD%95/" data-id="clhqd98qx0000jcvjardq8yqo" data-title="Nexo结合Github搭建个人博客记录" class="article-share-link">分享</a>
       
       
       
@@ -191,7 +206,7 @@ hexo d
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/07/AI%E7%88%86%E6%AC%BE%E5%8F%8A%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" data-id="clhnir5cu0000vkvj43vrb0c5" data-title="chatgpt的访问、使用、以及相关新进AI技术" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2023/05/07/AI%E7%88%86%E6%AC%BE%E5%8F%8A%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" data-id="clhqd98r90004jcvj2m7hhb8y" data-title="chatgpt的访问、使用、以及相关新进AI技术" class="article-share-link">分享</a>
       
       
       
@@ -229,7 +244,7 @@ hexo d
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/07/VSCODE%E8%BF%90%E8%A1%8C%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84flask%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/" data-id="clhnir5d50002vkvjhdn6g6mj" data-title="如何使用VS CODE进行python环境搭建" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2023/05/07/VSCODE%E8%BF%90%E8%A1%8C%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84flask%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/" data-id="clhqd98r80003jcvj5p3e2mm0" data-title="如何使用VS CODE进行python环境搭建" class="article-share-link">分享</a>
       
       
       
