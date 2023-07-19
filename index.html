@@ -156,6 +156,169 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/19/M365%20%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="RanrayD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ranray.zhang的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/19/M365%20%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-19 21:17:53 / 修改时间：19:18:24" itemprop="dateCreated datePublished" datetime="2023-07-19T21:17:53+08:00">2023-07-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="安全运营-Microsoft-Security-Operations-Analyst-指南-（一）"><a href="#安全运营-Microsoft-Security-Operations-Analyst-指南-（一）" class="headerlink" title="安全运营 | Microsoft Security Operations Analyst 指南 （一）"></a>安全运营 | Microsoft Security Operations Analyst 指南 （一）</h1><h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><p>在甲方企业工作时，最开始入职接触的就是微软 Microsoft 365 Defender （一套安全产品）的运营工作。目前这套微软的产品是行业内领先的”企业级信息安全解决方案“；把这套产品的理念、使用场景、功能特性、使用方法搞懂，对于建立规范、先进的安全运营理念，并延伸到个人将来的工作，是非常有好处的。</p>
+<p>本系列文章参考 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/certifications/exams/sc-200/?tab=tab-learning-paths">微软认证考试学习路径</a></p>
+<h2 id="2、内容规划"><a href="#2、内容规划" class="headerlink" title="2、内容规划"></a>2、内容规划</h2><p>（一） Microsoft 365 Defender 产品介绍；<br>（二） Defender for Identity 事件调查及运营闭环操作；<br>（三） Defender for Endpoint 事件调查及运营闭环操作；<br>（四） Defender for Office 365 钓鱼邮件调查及Powershell Cmdlet 基本使用；<br>（五） Defender for Cloud Apps  事件调查及运营闭环操作；<br>（六） Microsoft Purview 内部安全事件调查及运营闭环操作；<br>（七） Azure AD 登录事件调查及运营闭环操作；</p>
+<h2 id="3、Microsoft-365-Defender-是什么，它是如何进行威胁防护的？"><a href="#3、Microsoft-365-Defender-是什么，它是如何进行威胁防护的？" class="headerlink" title="3、Microsoft 365 Defender 是什么，它是如何进行威胁防护的？"></a>3、Microsoft 365 Defender 是什么，它是如何进行威胁防护的？</h2><pre><code>Tips：Microsoft 365 Defender 是一整套的安全解决方案。按照我个人的理解，其实这就是一个微软自己开发的原生XDR产品
+</code></pre>
+<p>从下图中，我们可以看到，这套解决方案的粗略架构以及各部分的功能，分为以下这几个部分：  </p>
+<ul>
+<li>Defender for Office 365 : 此组件主要防御来自outlook邮件的威胁；</li>
+<li>Defender for Endpoint : 此组件主要防御员工办公终端上的威胁；</li>
+<li>Defender for Identity : 此组件主要防御企业组织AD域环境中的各类攻击（内网渗透阶段）、以及AD域身份凭证的安全威胁事件；</li>
+<li>Defender for Cloud Apps ：本质上是一个CASB（云访问代理），用来防御用户在使用互联网上各类Saas服务时所面临的安全威胁；</li>
+<li>Microsoft Purview ： 此组件主要用来实现组织内部数据分类、数据防泄漏、内部合规、事件调查取证，方向上更加偏重于防范内部信息安全风险，所以在图中也显示为 INSIDER RISKS。</li>
+</ul>
+<p>另： Microsoft Sentinel 就是微软的SIEM，可以收集上述所有组件的日志，此产品在本系列文章中不做过多说明，因为本人在实际工作场景中，更多的是使用自建的 ElasticSearch 作为 SIEM 技术底座，没有使用微软的这个产品。</p>
+<p><img src="https://learn.microsoft.com/en-us/training/wwl-sci/introduction-microsoft-365-threat-protection/media/defend-across-attack-chains.png" alt="Microsoft 365 Defender product"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/19/CISSP%E8%80%83%E8%AF%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="RanrayD">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ranray.zhang的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/19/CISSP%E8%80%83%E8%AF%95/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-19 21:17:53" itemprop="dateCreated datePublished" datetime="2023-07-19T21:17:53+08:00">2023-07-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-07-17 10:49:38" itemprop="dateModified" datetime="2023-07-17T10:49:38+08:00">2023-07-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="2个月自学CISSP-2023年考试回顾"><a href="#2个月自学CISSP-2023年考试回顾" class="headerlink" title="2个月自学CISSP | 2023年考试回顾"></a>2个月自学CISSP | 2023年考试回顾</h1><h2 id="1、准备备考资料"><a href="#1、准备备考资料" class="headerlink" title="1、准备备考资料"></a>1、准备备考资料</h2><p>《OSG 8th》  其实现在中文已经有了第9版，所以买最新的比较好。新版里面有一些内容是扩充上去的，虽然考试中占比不多。</p>
+<h2 id="2、-试题准备"><a href="#2、-试题准备" class="headerlink" title="2、 试题准备"></a>2、 试题准备</h2><p>推荐网上公众号的免费试题库，和CISSP官方习题集是一样的。<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzA5NDM2MjQ3Mg==&scene=24&album_id=2277651545741836291&count=3#wechat_redirect">在线免费习题集</a></p>
+<h2 id="3、-复习方法"><a href="#3、-复习方法" class="headerlink" title="3、 复习方法"></a>3、 复习方法</h2><p>1） 通读一遍OSG ，并做好笔记，使用思维导图的方式梳理出每个知识域的知识脉络；  </p>
+<p>2） 第二遍仔细阅读OSG，并搭配习题集进行练习；  </p>
+<p>3） 第三遍熟读OSG，理解之前做错的题目、遗漏的知识点。</p>
+<h2 id="4、报名考试"><a href="#4、报名考试" class="headerlink" title="4、报名考试"></a>4、报名考试</h2><p><a target="_blank" rel="noopener" href="https://www.isc2china.org/?page_id=692">官方报名考试常见问题</a></p>
+<p>注意：<br>1）需要用自己实名制的外币信用卡付款，因为付款是用美元的；  </p>
+<p>2）报名过程中的表单，都是使用英文填写的；</p>
+<p>3）报名成功后，一定要留意自己的邮箱中，是否有ISC给你发的确认邮件。  </p>
+<h2 id="5、-参加考试注意事项"><a href="#5、-参加考试注意事项" class="headerlink" title="5、 参加考试注意事项"></a>5、 参加考试注意事项</h2><p>1） 提前半小时到考场；  </p>
+<p>2） 带好身份证和付款时候的外币信用卡；  </p>
+<p>3） 考试给6个小时，但实际上我认为3-4小时足够了；  </p>
+<p>4） 考试过程中学会休息，可以中途去喝喝水休息一下；  </p>
+<p>5） 试题是中英文对照的，如果看中文出现了一些歧义，一定要看看英文对照，往往会更加准确，对理解题目非常有帮助。</p>
+<h2 id="6、-考试后"><a href="#6、-考试后" class="headerlink" title="6、 考试后"></a>6、 考试后</h2><p>1） 考试当场会出结果，告知你是否通过（一张比较简陋的打印纸，不会显示分数）；  </p>
+<p>2） 通过后，需要大概1-2天，等待一封确认通过的邮件；</p>
+<p>3） 邮件中会给出跳转链接，用于考生填报自己的学历、工作经历，以及相关的证明材料；  </p>
+<p>4） 还要有一个已经是CISSP，并且是在有效期内的会员，帮助你背书，这些都在邮件链接的填报流程中有所体现。  </p>
+<p>5） 以上流程全部完成，等待6-8周，官方确认无问题后，再交125美元的保护费，拿证结束。  </p>
+<h2 id="7、Tips"><a href="#7、Tips" class="headerlink" title="7、Tips"></a>7、Tips</h2><p>1） 备考的战线越短越好，博主把复习、报名、考试的时间缩短到3个月之内；  </p>
+<p>2） 最好是有几年工作经验以后，有了一定的积累，再去考这个比较好；  </p>
+<p>3） 如果是为了应试，我认为并不值得考这个证书，更多的应该是抱着一种学习的心态，看书复习的时候，结合自己的工作去想想，这个技术日常有哪些应用场景。如果你是CISO，要怎么利用OSG中描述的内容，去完成安全控制目标，这样的考试才是有意义的； </p>
+<p>4） 所谓的习题集，其实是帮助你梳理知识点的，考试过程中，不会出现原题。并且答完一道题目后，没有返回修改的机会。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p><a target="_blank" rel="noopener" href="https://www.isc2china.org/?page_id=9100">CISSP考试大纲及其他要求</a>  </p>
+<p>1） 安全与风险管理；<br>2） 资产安全；<br>3） 安全架构与工程（密码学、加密工程、物理安全等内容）；<br>4） 通信与网络安全<br>5） 身份与访问管理（IAM）<br>6） 安全评估与测试<br>7） 安全运营<br>8） 软件开发安全</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/460451232">CISSP认证考试备考攻略</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/19/Chatgpt%E7%9A%84%E6%B3%A8%E5%86%8C%E3%80%81Plus%E5%8D%87%E7%BA%A7%E3%80%81%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -426,7 +589,7 @@ hexo d  //提交页面
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
